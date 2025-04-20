@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Call Logger</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f3f4f6;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(135deg, #4caf50, #81c784);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 1.8em;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+    canvas {
+      display: block;
+      margin: 20px auto;
+      border: 2px solid #4caf50;
+      border-radius: 10px;
+      background: #e8f5e9;
+    }
+    .buttons {
+      text-align: center;
+      margin-top: 15px;
+    }
+    button {
+      margin: 5px;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      background: #4caf50;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    button:hover {
+      background: #388e3c;
+      transform: translateY(-2px);
+    }
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    #log {
+      margin: 20px auto;
+      padding: 15px;
+      max-height: 400px;
+      overflow-y: auto;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+    .log-entry {
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .question {
+      background: #e8f5e9;
+      color: #2e7d32;
+    }
+    .answer {
+      background: #e3f2fd;
+      color: #0277bd;
+    }
+    .status {
+      background: #ede7f6;
+      color: #5e35b1;
+    }
+    footer {
+      text-align: center;
+      padding: 10px 0;
+      background: #333;
+      color: white;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <i class="fas fa-microphone-alt"></i> Call Logger with Voice Assistant
+  </header>
+  <div class="container">
+    <canvas id="waveform" width="800" height="200"></canvas>
+    <div class="buttons">
+      <button id="initBtn"><i class="fas fa-cogs"></i> Initialize</button>
+      <button id="startBtn" disabled><i class="fas fa-play"></i> Start Logging</button>
+      <button id="stopBtn" disabled><i class="fas fa-stop"></i> Stop</button>
+    </div>
+    <div id="log"></div>
+  </div>
+  <footer>
+    © 2025 Call Logger with Waveform - All Rights Reserved
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
